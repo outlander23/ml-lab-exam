@@ -10,7 +10,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
 
 # Parameters
-img_size = (128, 128)
+img_size = (16, 64)
 data_dir = "data/"  # folder with subfolders: "Cat", "Dog"
 
 X = []
@@ -41,7 +41,7 @@ X = scaler.fit_transform(X)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # --- PCA ---
-pca = PCA(n_components=20)  # reduce to 50 components
+pca = PCA(n_components=80)  # reduce to 50 components
 X_train_pca = pca.fit_transform(X_train)
 X_test_pca = pca.transform(X_test)
 
